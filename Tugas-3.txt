@@ -23,3 +23,25 @@ user.append({"nama": nama, "nik": nik, "jenis_kelamin": jenis_kelamin, "tanggal_
 print("Data user terbaru:")
 for data in user:
     print(data)
+
+#menerima input user untuk mencari data 
+
+nama = input("Silahkan masukan nama yang ingin dicari dari list: ")
+
+#berikut untuk mencari data berdasarkan input user 
+
+found = False
+for data in user:
+    if data["nama"].lower() == nama.lower():
+        found = True
+        print("Data lengkap dari", nama, "adalah:")
+        print("NIK:", data["nik"])
+        print("Jenis kelamin:", data["jenis_kelamin"])
+        print("Tanggal lahir:", data["tanggal_lahir"])
+
+#apabila tidak ditemukan maka menggunakan code berikut
+
+if not found:
+    print("Data tidak ada")
+
+
